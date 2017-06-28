@@ -1,4 +1,4 @@
-# LibZXing
+# LibZXing [![](https://jitpack.io/v/jwkj/LibZXing.svg)](https://jitpack.io/#jwkj/LibZXing)
 二维码扫描库
 
 - 基于zxing的封装
@@ -123,4 +123,5 @@ QRCodeManager.getInstance().with(this).scanningQRCode(requestCode);
 - 【新增】自动解析结果
 
 1.0.1
+
 - 【新增】正式发布
