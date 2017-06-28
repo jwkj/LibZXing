@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="app_name">libzxing</string>
+    <string name="scan_it">Scan it</string>
+    <string name="scan_text">Place the QR code into the box to start automatic scanning </string>
+    <string name="select_pic_from_album">选择相册中的图片</string>
+    <string name="pic_no_qrcode">图中无二维码或二维码难以识别</string>
+</resources>

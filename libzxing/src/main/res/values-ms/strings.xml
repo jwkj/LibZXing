@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<resources>
+    <string name="scan_it">Scan</string>
+    <string name="scan_text">Kod QR dimasukkan ke dalam kotak, ia secara automatik boleh mengimbas.</string>
+</resources>

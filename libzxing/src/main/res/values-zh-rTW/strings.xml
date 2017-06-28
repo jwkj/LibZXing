@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<resources>
+    <string name="scan_it">掃壹掃</string>
+    <string name="scan_text">將二維碼放入框內,即可自動掃描</string>
+</resources>

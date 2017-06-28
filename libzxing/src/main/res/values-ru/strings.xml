@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<resources>
+    <string name="scan_it">Сканируйте</string>
+    <string name="scan_text">Поместите QR-код в поле, чтобы начать автоматическое сканирование</string>
+</resources>
