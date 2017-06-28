@@ -2,4 +2,6 @@
 <resources>
     <string name="scan_it">スキャン</string>
     <string name="scan_text">QRコードを枠に映せば、自動でスキャンできます</string>
+    <string name="prompt">注意事項</string>
+    <string name="confirm">確認</string>
 </resources>

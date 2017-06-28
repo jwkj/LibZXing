@@ -33,6 +33,7 @@ import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.zxing.Result;
 import com.jwkj.libzxing.R;
@@ -211,7 +212,6 @@ public class CaptureActivity extends Activity implements
     public void handleDecode(Result rawResult, Bundle bundle) {
         inactivityTimer.onActivity();
         beepManager.playBeepSoundAndVibrate();
-
         if (captureType == 0) {
             Intent resultIntent = new Intent();
             bundle.putInt("width", mCropRect.width());
@@ -220,7 +220,6 @@ public class CaptureActivity extends Activity implements
             resultIntent.putExtras(bundle);
             this.setResult(RESULT_OK, resultIntent);
             CaptureActivity.this.finish();
-
         } else {
             scanDeviceSuccess(rawResult.toString(), bundle);
         }
@@ -229,6 +228,7 @@ public class CaptureActivity extends Activity implements
 
     /**
      * 扫描设备二维码成功
+     *
      * @param rawResult
      * @param bundle
      */
@@ -272,9 +272,9 @@ public class CaptureActivity extends Activity implements
     private void displayFrameworkBugMessageAndExit() {
         // camera error
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(getString(R.string.app_name));
-        builder.setMessage("Camera error");
-        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+        builder.setTitle(getString(R.string.prompt));
+        builder.setMessage(getString(R.string.camera_error));
+        builder.setPositiveButton(getString(R.string.confirm), new DialogInterface.OnClickListener() {
 
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -367,6 +367,9 @@ public class CaptureActivity extends Activity implements
 //                    Intent add = new Intent(this, AddContactActivity.class);
 //                    CaptureActivity.this.startActivity(add);
 //                    CaptureActivity.this.finish();
+                    Intent resultInten1t = new Intent();
+                    this.setResult(RESULT_CANCELED, resultInten1t);
+                    CaptureActivity.this.finish();
                 }
 
                 break;
@@ -379,11 +382,11 @@ public class CaptureActivity extends Activity implements
             String picPath = SelectAlbumUtils.getPicPath(this, data);
             Result result = DecodeBitmap.scanningImage(picPath);
             if (result == null) {
-//                Toast.makeText(this, getString(R.string.pic_no_qrcode), Toast.LENGTH_SHORT);
+                Toast.makeText(this, getString(R.string.pic_no_qrcode), Toast.LENGTH_SHORT).show();
             } else {
                 beepManager.playBeepSoundAndVibrate();
                 String scanResult = DecodeBitmap.parseReuslt(result.toString());
-                scanDeviceSuccess(scanResult,new Bundle());
+                scanDeviceSuccess(scanResult, new Bundle());
             }
         }
     }

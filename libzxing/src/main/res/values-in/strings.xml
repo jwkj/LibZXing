@@ -2,4 +2,6 @@
 <resources>
     <string name="scan_it">pindai</string>
     <string name="scan_text">masukkan kode QR ke dalam kotakm itu dapat memindai secara otomatis.</string>
+    <string name="prompt">Petunjuk</string>
+    <string name="confirm">Mengonfirmasi</string>
 </resources>

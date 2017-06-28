@@ -2,4 +2,6 @@
 <resources>
     <string name="scan_it">Сканируйте</string>
     <string name="scan_text">Поместите QR-код в поле, чтобы начать автоматическое сканирование</string>
+    <string name="prompt">Подсказка</string>
+    <string name="confirm">Подтвердить</string>
 </resources>

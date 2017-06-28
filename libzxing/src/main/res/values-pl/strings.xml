@@ -2,4 +2,5 @@
 <resources>
     <string name="scan_it">Zeskanować</string>
     <string name="scan_text">Umieść kod QR w polu widzenia, aby rozpocząć automatyczne skanowanie</string>
+    <string name="prompt">Podpowiedź</string>
 </resources>

@@ -2,4 +2,6 @@
 <resources>
     <string name="scan_it">اسکن</string>
     <string name="scan_text">کد QR را در مربع وارد کنید، به طور خودکار اسکن می شود</string>
+    <string name="prompt">نکته</string>
+    <string name="confirm">تایید</string>
 </resources>

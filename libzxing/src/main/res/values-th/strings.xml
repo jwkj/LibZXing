@@ -2,4 +2,6 @@
 <resources>
     <string name="scan_it">สแกนโค้ด</string>
     <string name="scan_text">สแกนรหัสสองมิติลงในกล่อง  มันจะสามารถสแกน</string>
+    <string name="prompt">แนะแนว</string>
+    <string name="confirm">แน่นอน</string>
 </resources>

@@ -2,4 +2,5 @@
 <resources>
     <string name="scan_it">Escanear</string>
     <string name="scan_text">Coloque el código QR dentro de la caja para iniciar con el escaneo</string>
+    <string name="prompt">Aviso</string>
 </resources>

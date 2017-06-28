@@ -2,4 +2,6 @@
 <resources>
     <string name="scan_it">scannen</string>
     <string name="scan_text">Automatisch scannen wenn der QR-Code in der Mitte steht</string>
+    <string name="prompt">Hinweis</string>
+    <string name="confirm">bestätigen</string>
 </resources>
