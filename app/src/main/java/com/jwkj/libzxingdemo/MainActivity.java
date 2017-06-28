@@ -143,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * 请求权限
+     * 适配android6.0以上权限
      */
     private void requestPermission() {
         /**
