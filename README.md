@@ -3,9 +3,8 @@
 
 - 基于zxing的封装
 - 可选相册中的二维码识别
-- 相册选择已适配至android7.1
+- 相册选择适配至android7.1
 - 支持19种语言
-- 调用方式简单
 
 详细使用方法见demo
 
@@ -33,7 +32,7 @@ Add it in your root build.gradle at the end of repositories:
 ### Step 2. Add the dependency
 ```
 dependencies {
-        compile 'com.github.jwkj:LibZXing:v1.0.2'
+        compile 'com.github.jwkj:LibZXing:v1.0.3'
 }
 ```
 
@@ -113,4 +112,15 @@ QRCodeManager.getInstance().with(this).scanningQRCode(requestCode);
       }
 ```
 
+## 更新记录
 
+1.0.3
+
+- 【新增】支持sdk22及以上的使用
+
+1.0.2
+
+- 【新增】自动解析结果
+
+1.0.1
+- 【新增】正式发布
