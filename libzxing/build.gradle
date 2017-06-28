@@ -19,6 +19,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
 }
 
 dependencies {
@@ -29,12 +30,13 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.3.1'
     testCompile 'junit:junit:4.12'
     compile files('libs/zxing.jar')
+
 }
 /** 以下开始是将Android Library上传到jcenter的相关配置**/
 apply plugin: 'com.novoda.bintray-release'//添加
 //项目主页
 def siteUrl = 'https://github.com/jwkj/libzxingdemo'
-publish{
+publish {
     repoName = 'jwkj'//远程仓库名字,不指明，默认是上传到maven
     userOrg = 'huangdali'//bintray.com的用户名
     groupId = 'com.jwkj'//jcenter上的路径

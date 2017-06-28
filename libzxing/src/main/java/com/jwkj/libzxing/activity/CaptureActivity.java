@@ -33,10 +33,8 @@ import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.zxing.Result;
-import com.hdl.elog.ELog;
 import com.jwkj.libzxing.R;
 import com.jwkj.libzxing.camera.CameraManager;
 import com.jwkj.libzxing.decode.DecodeBitmap;
@@ -99,7 +97,8 @@ public class CaptureActivity extends Activity implements
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         setContentView(R.layout.activity_capture);
         captureType = getIntent().getIntExtra("type", 0);
-
+        String string = getApplication().getResources().getString(R.string.scan_it);
+//        Log.e("hdltag", "onCreate(CaptureActivity.java:102):" +string);
         scanPreview = (SurfaceView) findViewById(R.id.capture_preview);
         scanContainer = (RelativeLayout) findViewById(R.id.capture_container);
         scanCropView = (RelativeLayout) findViewById(R.id.capture_crop_view);
@@ -220,9 +219,6 @@ public class CaptureActivity extends Activity implements
             bundle.putString("result", rawResult.getText());
             resultIntent.putExtras(bundle);
             this.setResult(RESULT_OK, resultIntent);
-            ELog.e("width", mCropRect.width());
-            ELog.e("height", mCropRect.height());
-            ELog.e("result", rawResult.getText());
             CaptureActivity.this.finish();
 
         } else {
@@ -358,19 +354,16 @@ public class CaptureActivity extends Activity implements
     public void onClick(View v) {
         switch (Integer.parseInt(v.getTag().toString())) {
             case 123:
-                ELog.e("1");
                 Intent resultIntent = new Intent();
                 this.setResult(RESULT_CANCELED, resultIntent);
                 CaptureActivity.this.finish();
                 break;
             case 124:
                 if (captureType == 0) {
-                    ELog.e("调用到这里了");
                     Intent mullt = new Intent();
                     this.setResult(RESULT_MULLT, mullt);
                     CaptureActivity.this.finish();
                 } else {
-                    ELog.e("调用这里了，说明是失败了");
 //                    Intent add = new Intent(this, AddContactActivity.class);
 //                    CaptureActivity.this.startActivity(add);
 //                    CaptureActivity.this.finish();
@@ -386,7 +379,7 @@ public class CaptureActivity extends Activity implements
             String picPath = SelectAlbumUtils.getPicPath(this, data);
             Result result = DecodeBitmap.scanningImage(picPath);
             if (result == null) {
-                Toast.makeText(this, getString(R.string.pic_no_qrcode), Toast.LENGTH_SHORT);
+//                Toast.makeText(this, getString(R.string.pic_no_qrcode), Toast.LENGTH_SHORT);
             } else {
                 beepManager.playBeepSoundAndVibrate();
                 String scanResult = DecodeBitmap.parseReuslt(result.toString());

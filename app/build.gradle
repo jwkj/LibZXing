@@ -30,4 +30,5 @@ dependencies {
     compile 'com.hdl:elog:v2.0.2'
     compile project(':libzxing')
     compile 'com.google.code.gson:gson:2.8.1'
+
 }

@@ -2,4 +2,6 @@
 <resources>
     <string name="scan_it">扫一扫</string>
     <string name="scan_text">将二维码放入框内,即可自动扫描</string>
+    <string name="select_pic_from_album">选择相册中的图片</string>
+    <string name="pic_no_qrcode">图中无二维码或二维码难以识别</string>
 </resources>

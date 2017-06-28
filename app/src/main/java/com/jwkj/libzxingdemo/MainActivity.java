@@ -147,7 +147,7 @@ public class MainActivity extends AppCompatActivity {
      */
     private void requestPermission() {
         /**
-         * 请求所有必要的权限----
+         * 请求所有必要的权限
          */
         PermissionsManager.getInstance().requestAllManifestPermissionsIfNecessary(this, new PermissionsResultAction() {
             @Override
