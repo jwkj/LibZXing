@@ -35,7 +35,7 @@ dependencies {
 ```
 QRCodeManager.getInstance().createQRCode("二维码内容", 300, 300);
 ```
-![](https://github.com/jwkj/LibZXing/blob/master/nologo.gif)
+![](https://github.com/jwkj/LibZXing/blob/master/nologo.png)
 
 生成一个300*300有logo的二维码
 
@@ -43,7 +43,7 @@ QRCodeManager.getInstance().createQRCode("二维码内容", 300, 300);
 QRCodeManager.getInstance().createQRCode("二维码内容", 300, 300,logoBitmap);
 ```
 
-![](https://github.com/jwkj/LibZXing/blob/master/logo.gif)
+![](https://github.com/jwkj/LibZXing/blob/master/logo.png)
 
 ## 识别二维码
 
