@@ -30,8 +30,7 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:22.+'
     testCompile 'junit:junit:4.12'
-    compile files('libs/zxing.jar')
-
+    compile 'com.google.zxing:core:3.3.0'
 }
 
 tasks.withType(Javadoc) {//防止编码问题
