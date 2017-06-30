@@ -1,9 +1,12 @@
 # LibZXing [![](https://jitpack.io/v/jwkj/LibZXing.svg)](https://jitpack.io/#jwkj/LibZXing)
 二维码扫描库
 
-- 基于zxing的封装
+- 基于 ZXing:core_v3.3.0(最新版) 的封装，扫描速度快
+
 - 可选相册中的二维码识别
+
 - 相册选择适配至android7.1
+
 - 支持19种语言
 
 详细使用方法见demo
@@ -11,7 +14,7 @@
 
 ## 效果图
 
-文件比较大，请耐心等待
+图片比较大，请耐心等待
 
 ![](https://github.com/jwkj/LibZXing/blob/master/qrcode.gif)
 
@@ -32,7 +35,7 @@ Add it in your root build.gradle at the end of repositories:
 ### Step 2. Add the dependency
 ```
 dependencies {
-        compile 'com.github.jwkj:LibZXing:v1.0.3'
+        compile 'com.github.jwkj:LibZXing:v1.0.4'
 }
 ```
 
@@ -113,6 +116,9 @@ QRCodeManager.getInstance().with(this).scanningQRCode(requestCode);
 ```
 
 ## 更新记录
+
+1.0.4
+- 【优化】使用最新版zxing_core
 
 1.0.3
 
