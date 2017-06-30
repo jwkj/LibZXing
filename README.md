@@ -117,6 +117,8 @@ QRCodeManager.getInstance().with(this).scanningQRCode(requestCode);
 ```
 
 ## 更新记录
+1.0.5
+- 【修复】资源id与主项目重号时报错
 
 1.0.4
 - 【优化】使用最新版zxing_core
