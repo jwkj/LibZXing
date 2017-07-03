@@ -29,8 +29,8 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha7'
     testCompile 'junit:junit:4.12'
     compile 'com.hdl:elog:v2.0.2'
-    compile project(':libzxing')
+//    compile project(':libzxing')
     compile 'com.google.code.gson:gson:2.8.1'
-//    compile 'com.github.jwkj:LibZXing:v1.0.6.01'
+    compile 'com.github.jwkj:LibZXing:v1.1.2'
 
 }
