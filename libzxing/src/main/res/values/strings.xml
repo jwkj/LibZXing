@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <string name="lib_name">libzxing</string>
+    <string name="app_name">libzxing</string>
     <string name="jwstr_scan_it">Scan it</string>
     <string name="jwstr_scan_text">Place the QR code into the box to start automatic scanning </string>
     <string name="jwstr_prompt">Prompt</string>
