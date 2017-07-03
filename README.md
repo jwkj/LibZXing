@@ -43,8 +43,8 @@ dependencies {
 在app/proguard-rules.pro的最后加上
 ```java
 #libzxing二维码扫描库
--keep class com.jwkj.libzxing.** {  *;}
--dontwarn com.jwkj.libzxing.**
+-keep class com.jwsd.libzxing.** {  *;}
+-dontwarn com.jwsd.libzxing.**
 -keep class com.google.zxing.** {  *;}
 -dontwarn com.google.zxing.**
 ```
