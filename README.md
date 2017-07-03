@@ -9,6 +9,8 @@
 
 - 支持19种语言
 
+- 识别成功之后震动手机
+
 详细使用方法见demo
 
 > 部分非中文翻译还未补全，下一版将补全剩余非中文翻译
@@ -40,7 +42,9 @@ dependencies {
 }
 ```
 ### Step 3. 混淆配置
+
 在app/proguard-rules.pro的最后加上
+
 ```java
 #libzxing二维码扫描库
 -keep class com.jwsd.libzxing.** {  *;}
