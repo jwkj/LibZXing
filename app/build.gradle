@@ -31,6 +31,6 @@ dependencies {
     compile 'com.hdl:elog:v2.0.2'
 //    compile project(':libzxing')
     compile 'com.google.code.gson:gson:2.8.1'
-    compile 'com.github.jwkj:LibZXing:v1.0.4'
+    compile 'com.github.jwkj:LibZXing:v1.0.6.01'
 
 }
