@@ -106,19 +106,11 @@ public class CaptureActivity extends Activity implements
         scanLine = (ImageView) findViewById(R.id.capture_scan_line);
         ivBack = (ImageView) findViewById(R.id.iv_back);
         ivMullt = (ImageView) findViewById(R.id.iv_mudle);
-        tvAlbum = (TextView) findViewById(R.id.tv_capture_select_album);
-        tvAlbum.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //打开相册选择图片
-                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-                intent.addCategory(Intent.CATEGORY_OPENABLE);
-                intent.setType("image/*");
-                startActivityForResult(intent, CODE_GALLERY_REQUEST);
-            }
-        });
+        tvAlbum = (TextView) findViewById(R.id.tv_capture_select_album_jwkj);
         ivBack.setTag(123);
         ivMullt.setTag(124);
+        tvAlbum.setTag(125);
+        tvAlbum.setOnClickListener(this);
         ivBack.setOnClickListener(this);
         ivMullt.setOnClickListener(this);
         inactivityTimer = new InactivityTimer(this);
@@ -371,7 +363,13 @@ public class CaptureActivity extends Activity implements
                     this.setResult(RESULT_CANCELED, resultInten1t);
                     CaptureActivity.this.finish();
                 }
-
+                break;
+            case 125:
+                //打开相册选择图片
+                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                intent.addCategory(Intent.CATEGORY_OPENABLE);
+                intent.setType("image/*");
+                startActivityForResult(intent, CODE_GALLERY_REQUEST);
                 break;
         }
     }

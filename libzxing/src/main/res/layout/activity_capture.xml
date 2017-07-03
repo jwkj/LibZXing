@@ -80,14 +80,14 @@
             android:textSize="12sp" />
 
         <TextView
-            android:id="@+id/tv_capture_select_album"
+            android:id="@+id/tv_capture_select_album_jwkj"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/select_pic_from_album"
+            android:layout_alignParentBottom="true"
             android:layout_alignTop="@id/capture_mask_bottom"
             android:background="@drawable/shadow"
-            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            android:text="@string/select_pic_from_album"
             android:textColor="#1dcaf5"
             android:textSize="18sp" />
 
