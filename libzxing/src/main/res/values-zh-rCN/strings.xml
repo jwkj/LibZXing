@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources>
-    <string name="scan_it">扫一扫</string>
-    <string name="scan_text">将二维码放入框内,即可自动扫描</string>
-    <string name="select_pic_from_album">选择相册中的图片</string>
-    <string name="pic_no_qrcode">图中无二维码或二维码难以识别</string>
-    <string name="prompt">提示</string>
-    <string name="confirm">确定</string>
+    <string name="jwstr_scan_it">扫一扫</string>
+    <string name="jwstr_scan_text">将二维码放入框内,即可自动扫描</string>
+    <string name="jwstr_select_pic_from_album">选择相册中的图片</string>
+    <string name="jwstr_pic_no_qrcode">图中无二维码或二维码难以识别</string>
+    <string name="jwstr_prompt">提示</string>
+    <string name="jwstr_confirm">确定</string>
 </resources>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources>
-    <string name="scan_it">Zeskanować</string>
-    <string name="scan_text">Umieść kod QR w polu widzenia, aby rozpocząć automatyczne skanowanie</string>
-    <string name="prompt">Podpowiedź</string>
+    <string name="jwstr_scan_it">Zeskanować</string>
+    <string name="jwstr_scan_text">Umieść kod QR w polu widzenia, aby rozpocząć automatyczne skanowanie</string>
+    <string name="jwstr_prompt">Podpowiedź</string>
 </resources>

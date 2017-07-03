@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources>
-    <string name="scan_it">스캔 </string>
-    <string name="scan_text">바코드를 창내에 넣으면 즉시 자동 스캔 가능합니다</string>
-    <string name="prompt">제시</string>
-    <string name="confirm">확인</string>
+    <string name="jwstr_scan_it">스캔 </string>
+    <string name="jwstr_scan_text">바코드를 창내에 넣으면 즉시 자동 스캔 가능합니다</string>
+    <string name="jwstr_prompt">제시</string>
+    <string name="jwstr_confirm">확인</string>
 </resources>

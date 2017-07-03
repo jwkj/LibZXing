@@ -33,7 +33,7 @@
                 android:layout_height="40.5dp"
                 android:layout_toRightOf="@+id/iv_back"
                 android:gravity="center"
-                android:text="@string/scan_it"
+                android:text="@string/jwstr_scan_it"
                 android:textColor="#FFFFFF" />
 
             <ImageView
@@ -75,7 +75,7 @@
             android:layout_below="@id/capture_crop_view"
             android:gravity="center_horizontal"
             android:paddingTop="17.5dp"
-            android:text="@string/scan_text"
+            android:text="@string/jwstr_scan_text"
             android:textColor="#FFFFFF"
             android:textSize="12sp" />
 
@@ -87,7 +87,7 @@
             android:layout_alignTop="@id/capture_mask_bottom"
             android:background="@drawable/shadow"
             android:gravity="center"
-            android:text="@string/select_pic_from_album"
+            android:text="@string/jwstr_select_pic_from_album"
             android:textColor="#1dcaf5"
             android:textSize="18sp" />
 

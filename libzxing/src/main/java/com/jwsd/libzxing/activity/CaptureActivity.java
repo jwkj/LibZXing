@@ -98,7 +98,7 @@ public class CaptureActivity extends Activity implements
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         setContentView(R.layout.activity_capture);
         captureType = getIntent().getIntExtra("type", 0);
-        String string = getApplication().getResources().getString(R.string.scan_it);
+        String string = getApplication().getResources().getString(R.string.jwstr_scan_it);
 //        Log.e("hdltag", "onCreate(CaptureActivity.java:102):" +string);
         scanPreview = (SurfaceView) findViewById(R.id.capture_preview);
         scanContainer = (RelativeLayout) findViewById(R.id.capture_container);
@@ -264,9 +264,9 @@ public class CaptureActivity extends Activity implements
     private void displayFrameworkBugMessageAndExit() {
         // camera error
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(getString(R.string.prompt));
-        builder.setMessage(getString(R.string.camera_error));
-        builder.setPositiveButton(getString(R.string.confirm), new DialogInterface.OnClickListener() {
+        builder.setTitle(getString(R.string.jwstr_prompt));
+        builder.setMessage(getString(R.string.jwstr_camera_error));
+        builder.setPositiveButton(getString(R.string.jwstr_confirm), new DialogInterface.OnClickListener() {
 
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -380,7 +380,7 @@ public class CaptureActivity extends Activity implements
             String picPath = SelectAlbumUtils.getPicPath(this, data);
             Result result = DecodeBitmap.scanningImage(picPath);
             if (result == null) {
-                Toast.makeText(this, getString(R.string.pic_no_qrcode), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getString(R.string.jwstr_pic_no_qrcode), Toast.LENGTH_SHORT).show();
             } else {
                 beepManager.playBeepSoundAndVibrate();
                 String scanResult = DecodeBitmap.parseReuslt(result.toString());
