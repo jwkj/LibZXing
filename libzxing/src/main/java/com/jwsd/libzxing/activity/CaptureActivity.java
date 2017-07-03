@@ -286,7 +286,7 @@ public class CaptureActivity extends Activity implements
 
     public void restartPreviewAfterDelay(long delayMS) {
         if (handler != null) {
-            handler.sendEmptyMessageDelayed(R.id.restart_preview, delayMS);
+            handler.sendEmptyMessageDelayed(R.id.jwstr_restart_preview, delayMS);
         }
     }
 

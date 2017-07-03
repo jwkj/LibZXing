@@ -64,14 +64,14 @@ public class DecodeHandler extends Handler {
         if (!running) {
             return;
         }
-        if (message.what == R.id.decode) {
+        if (message.what == R.id.jwstr_decode) {
             try {
                 decode((byte[]) message.obj, message.arg1, message.arg2);
             } catch (Throwable e) {
                 // TODO: handle exception
             }
 
-        } else if (message.what == R.id.quit) {
+        } else if (message.what == R.id.jwstr_quit) {
             running = false;
             Looper.myLooper().quit();
 
@@ -119,7 +119,7 @@ public class DecodeHandler extends Handler {
         if (rawResult != null) {
             // Don't log the barcode contents for security.
             if (handler != null) {
-                Message message = Message.obtain(handler, R.id.decode_succeeded, rawResult);
+                Message message = Message.obtain(handler, R.id.jwstr_decode_succeeded, rawResult);
                 Bundle bundle = new Bundle();
                 bundleThumbnail(source, bundle);
                 message.setData(bundle);
@@ -127,7 +127,7 @@ public class DecodeHandler extends Handler {
             }
         } else {
             if (handler != null) {
-                Message message = Message.obtain(handler, R.id.decode_failed);
+                Message message = Message.obtain(handler, R.id.jwstr_decode_failed);
                 message.sendToTarget();
             }
         }
