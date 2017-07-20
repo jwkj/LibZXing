@@ -31,8 +31,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="40.5dp"
-                android:layout_toRightOf="@+id/iv_back"
                 android:gravity="center"
+                android:layout_centerHorizontal="true"
                 android:text="@string/jwstr_scan_it"
                 android:textColor="#FFFFFF" />
 
@@ -71,10 +71,11 @@
         <TextView
             android:id="@+id/capture_mask_bottom"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_below="@id/capture_crop_view"
             android:gravity="center_horizontal"
             android:paddingTop="17.5dp"
+            android:background="@drawable/shadow"
             android:text="@string/jwstr_scan_text"
             android:textColor="#FFFFFF"
             android:textSize="12sp" />
@@ -87,6 +88,7 @@
             android:layout_alignTop="@id/capture_mask_bottom"
             android:background="@drawable/shadow"
             android:gravity="center"
+            android:visibility="gone"
             android:text="@string/jwstr_select_pic_from_album"
             android:textColor="#1dcaf5"
             android:textSize="18sp" />
