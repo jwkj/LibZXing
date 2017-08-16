@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.hdl.elog.ELog;
 import com.jwsd.libzxing.OnQRCodeScanCallback;
 import com.jwsd.libzxing.QRCodeManager;
 import com.jwkj.libzxingdemo.runtimepermissions.PermissionsManager;
@@ -89,7 +90,8 @@ public class MainActivity extends AppCompatActivity {
     public void onScanQR(View view) {
         QRCodeManager.getInstance()
                 .with(this)
-                .setReqeustType(1)
+                .setReqeustType(0)
+//                .setRequestCode(1001)
                 .scanningQRCode(new OnQRCodeScanCallback() {
                     @Override
                     public void onCompleted(String result) {
@@ -105,12 +107,27 @@ public class MainActivity extends AppCompatActivity {
                     public void onCancel() {
                         controlLog.append("\n\n(取消)扫描任务取消了");
                     }
+
+                    /**
+                     * 当点击手动添加时回调
+                     *
+                     * @param requestCode
+                     * @param resultCode
+                     * @param data
+                     */
+                    @Override
+                    public void onManual(int requestCode, int resultCode, Intent data) {
+                        ELog.e("点击了手动添加了");
+                    }
+
+
                 });
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        ELog.e("走了这里了"+requestCode+"---"+resultCode);
         //注册onActivityResult
         QRCodeManager.getInstance().with(this).onActivityResult(requestCode, resultCode, data);
     }

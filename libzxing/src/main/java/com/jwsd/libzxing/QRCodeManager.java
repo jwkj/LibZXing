@@ -44,6 +44,16 @@ public class QRCodeManager extends IQRCodeStrategy {
     }
 
     /**
+     * 设置请求码
+     *
+     * @param curRequestCode
+     */
+    public QRCodeManager setRequestCode(int curRequestCode) {
+        this.curRequestCode = curRequestCode;
+        return this;
+    }
+
+    /**
      * 关联调用类
      *
      * @param context
@@ -75,7 +85,7 @@ public class QRCodeManager extends IQRCodeStrategy {
      */
     public QRCodeManager scanningQRCode(OnQRCodeScanCallback callback) {
         this.callback = callback;
-        scanning(SCAN_REQUEST_CODE);
+        scanning(curRequestCode);
         return this;
     }
 
@@ -100,7 +110,7 @@ public class QRCodeManager extends IQRCodeStrategy {
         this.curRequestCode = requestCode;
         Intent intent = new Intent(context, CaptureActivity.class);
         intent.putExtra("type", requestType);
-        context.startActivityForResult(intent, SCAN_REQUEST_CODE);
+        context.startActivityForResult(intent, curRequestCode);
     }
 
     /**
@@ -124,6 +134,8 @@ public class QRCodeManager extends IQRCodeStrategy {
             }
         } else if (requestCode == curRequestCode && resultCode == Activity.RESULT_CANCELED) {//取消
             callback.onCancel();
+        } else if (requestCode == curRequestCode && resultCode == CaptureActivity.RESULT_MULLT) {
+            callback.onManual(requestCode, resultCode, data);
         }
     }
 

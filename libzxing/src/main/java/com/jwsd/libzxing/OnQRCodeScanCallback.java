@@ -1,5 +1,7 @@
 package com.jwsd.libzxing;
 
+import android.content.Intent;
+
 /**
  * 二维码扫描结果回调
  * Created by HDL on 2017/6/28.
@@ -24,4 +26,9 @@ public interface OnQRCodeScanCallback {
      * 当扫描被取消的时候回调
      */
     void onCancel();
+
+    /**
+     * 当点击手动添加时回调
+     */
+    void onManual(int requestCode, int resultCode, Intent data);
 }
