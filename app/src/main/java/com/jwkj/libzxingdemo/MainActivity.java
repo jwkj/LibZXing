@@ -13,11 +13,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.hdl.elog.ELog;
-import com.jwsd.libzxing.OnQRCodeScanCallback;
-import com.jwsd.libzxing.QRCodeManager;
 import com.jwkj.libzxingdemo.runtimepermissions.PermissionsManager;
 import com.jwkj.libzxingdemo.runtimepermissions.PermissionsResultAction;
 import com.jwkj.libzxingdemo.utils.QRCodeFileUtils;
+import com.jwsd.libzxing.OnQRCodeListener;
+import com.jwsd.libzxing.QRCodeManager;
 
 public class MainActivity extends AppCompatActivity {
     private TextView controlLog;
@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
                 .with(this)
                 .setReqeustType(0)
 //                .setRequestCode(1001)
-                .scanningQRCode(new OnQRCodeScanCallback() {
+                .scanningQRCode(new OnQRCodeListener() {
                     @Override
                     public void onCompleted(String result) {
                         controlLog.append("\n\n(结果)" + result);

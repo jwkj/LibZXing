@@ -21,7 +21,7 @@ public class QRCodeManager extends IQRCodeStrategy {
     private static final int SCAN_REQUEST_CODE = 410;
     private static QRCodeManager mQRCodeManager;
     private Activity context;
-    private OnQRCodeScanCallback callback;
+    private OnQRCodeListener callback;
     /**
      * 当前的请求码
      */
@@ -83,7 +83,7 @@ public class QRCodeManager extends IQRCodeStrategy {
      *
      * @return
      */
-    public QRCodeManager scanningQRCode(OnQRCodeScanCallback callback) {
+    public QRCodeManager scanningQRCode(OnQRCodeListener callback) {
         this.callback = callback;
         scanning(curRequestCode);
         return this;
