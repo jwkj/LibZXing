@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources>
-    <string name="scan_it">Scan</string>
-    <string name="scan_text">Kod QR dimasukkan ke dalam kotak, ia secara automatik boleh mengimbas.</string>
-    <string name="prompt">Tanda-tanda</string>
-    <string name="confirm">Mengesahkan</string>
+    <string name="jwstr_scan_it">Scan</string>
+    <string name="jwstr_scan_text">Kod QR dimasukkan ke dalam kotak, ia secara automatik boleh mengimbas.</string>
+    <string name="jwstr_prompt">Tanda-tanda</string>
+    <string name="jwstr_confirm">Mengesahkan</string>
 </resources>

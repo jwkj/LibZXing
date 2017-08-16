@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources>
-    <string name="scan_it">Сканируйте</string>
-    <string name="scan_text">Поместите QR-код в поле, чтобы начать автоматическое сканирование</string>
-    <string name="prompt">Подсказка</string>
-    <string name="confirm">Подтвердить</string>
+    <string name="jwstr_scan_it">Сканируйте</string>
+    <string name="jwstr_scan_text">Поместите QR-код в поле, чтобы начать автоматическое сканирование</string>
+    <string name="jwstr_prompt">Подсказка</string>
+    <string name="jwstr_confirm">Подтвердить</string>
 </resources>

@@ -12,8 +12,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.jwkj.libzxing.OnQRCodeScanCallback;
-import com.jwkj.libzxing.QRCodeManager;
+import com.jwsd.libzxing.OnQRCodeScanCallback;
+import com.jwsd.libzxing.QRCodeManager;
 import com.jwkj.libzxingdemo.runtimepermissions.PermissionsManager;
 import com.jwkj.libzxingdemo.runtimepermissions.PermissionsResultAction;
 import com.jwkj.libzxingdemo.utils.QRCodeFileUtils;

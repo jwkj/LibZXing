@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources>
-    <string name="scan_it">ler código QR</string>
-    <string name="scan_text">pôr código QR na quadro e vai digitalizar automaticamente</string>
-    <string name="prompt">pronto</string>
-    <string name="confirm">confirmar</string>
+    <string name="jwstr_scan_it">ler código QR</string>
+    <string name="jwstr_scan_text">pôr código QR na quadro e vai digitalizar automaticamente</string>
+    <string name="jwstr_prompt">pronto</string>
+    <string name="jwstr_confirm">confirmar</string>
 </resources>

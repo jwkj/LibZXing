@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources>
-    <string name="scan_it">Quét</string>
-    <string name="scan_text">Đặt QR vào trong khung nó sẽ tự động quét</string>
-    <string name="prompt">Nhắc nhở</string>
+    <string name="jwstr_scan_it">Quét</string>
+    <string name="jwstr_scan_text">Đặt QR vào trong khung nó sẽ tự động quét</string>
+    <string name="jwstr_prompt">Nhắc nhở</string>
 </resources>

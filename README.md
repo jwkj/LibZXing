@@ -9,9 +9,11 @@
 
 - 支持19种语言
 
+- 识别成功之后震动手机
+
 详细使用方法见demo
 
-> 部分非中文翻译还未补全，下一版1.0.5将补全剩余非中文翻译
+> 部分非中文翻译还未补全，下一版将补全剩余非中文翻译
 
 ## 效果图
 
@@ -36,8 +38,19 @@ Add it in your root build.gradle at the end of repositories:
 ### Step 2. Add the dependency
 ```
 dependencies {
-        compile 'com.github.jwkj:LibZXing:v1.0.4'
+        compile 'com.github.jwkj:LibZXing:v1.1.2'
 }
+```
+### Step 3. 混淆配置
+
+在app/proguard-rules.pro的最后加上
+
+```java
+#libzxing二维码扫描库
+-keep class com.jwsd.libzxing.** {  *;}
+-dontwarn com.jwsd.libzxing.**
+-keep class com.google.zxing.** {  *;}
+-dontwarn com.google.zxing.**
 ```
 
 ## 生成二维码
@@ -117,6 +130,11 @@ QRCodeManager.getInstance().with(this).scanningQRCode(requestCode);
 ```
 
 ## 更新记录
+1.1.2
+- 【新增】扫描成功时震动
+
+1.0.5
+- 【修复】资源id与主项目重号时报错
 
 1.0.4
 - 【优化】使用最新版zxing_core
