@@ -21,7 +21,7 @@ public class QRCodeManager extends IQRCodeStrategy {
     private static final int SCAN_REQUEST_CODE = 410;
     private static QRCodeManager mQRCodeManager;
     private Activity context;
-    private OnQRCodeScanCallback callback;
+    private OnQRCodeListener callback;
     /**
      * 当前的请求码
      */
@@ -41,6 +41,16 @@ public class QRCodeManager extends IQRCodeStrategy {
             }
         }
         return mQRCodeManager;
+    }
+
+    /**
+     * 设置请求码
+     *
+     * @param curRequestCode
+     */
+    public QRCodeManager setRequestCode(int curRequestCode) {
+        this.curRequestCode = curRequestCode;
+        return this;
     }
 
     /**
@@ -73,9 +83,9 @@ public class QRCodeManager extends IQRCodeStrategy {
      *
      * @return
      */
-    public QRCodeManager scanningQRCode(OnQRCodeScanCallback callback) {
+    public QRCodeManager scanningQRCode(OnQRCodeListener callback) {
         this.callback = callback;
-        scanning(SCAN_REQUEST_CODE);
+        scanning(curRequestCode);
         return this;
     }
 
@@ -100,7 +110,7 @@ public class QRCodeManager extends IQRCodeStrategy {
         this.curRequestCode = requestCode;
         Intent intent = new Intent(context, CaptureActivity.class);
         intent.putExtra("type", requestType);
-        context.startActivityForResult(intent, SCAN_REQUEST_CODE);
+        context.startActivityForResult(intent, curRequestCode);
     }
 
     /**
@@ -124,6 +134,8 @@ public class QRCodeManager extends IQRCodeStrategy {
             }
         } else if (requestCode == curRequestCode && resultCode == Activity.RESULT_CANCELED) {//取消
             callback.onCancel();
+        } else if (requestCode == curRequestCode && resultCode == CaptureActivity.RESULT_MULLT) {
+            callback.onManual(requestCode, resultCode, data);
         }
     }
 

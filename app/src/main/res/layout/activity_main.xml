@@ -6,6 +6,12 @@
     android:orientation="vertical"
     tools:context="com.jwkj.libzxingdemo.MainActivity">
 
+    <fragment
+        android:id="@+id/fm"
+        android:name="com.jwkj.libzxingdemo.BlankFragment"
+        android:layout_width="match_parent"
+        android:layout_height="100dp" />
+
     <EditText
         android:id="@+id/et_content"
         android:layout_width="match_parent"

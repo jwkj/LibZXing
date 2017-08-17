@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.hdl.elog.ELog;
+import com.jwsd.libzxing.QRCodeManager;
 
 
 public class BlankFragment extends Fragment {
@@ -26,6 +27,8 @@ public class BlankFragment extends Fragment {
         view.findViewById(R.id.btn_start).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ELog.e("点击了");
+                QRCodeManager.getInstance().with(getActivity()).scanningQRCode(1);
             }
         });
 
