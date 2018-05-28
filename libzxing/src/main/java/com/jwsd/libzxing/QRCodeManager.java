@@ -27,7 +27,7 @@ public class QRCodeManager extends IQRCodeStrategy {
      */
     private int curRequestCode = SCAN_REQUEST_CODE;
     /**
-     * 请求的类型，默认为0
+     * 请求的类型，默认为0（0：传感器添加 1：扫一扫 2：扫描自动配网）
      */
     private int requestType = 0;
 

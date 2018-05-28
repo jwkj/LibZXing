@@ -5,7 +5,7 @@
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
 
     <application
         android:allowBackup="true"
@@ -16,7 +16,7 @@
             android:alwaysRetainTaskState="true"
             android:configChanges="locale|orientation"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            android:theme="@android:style/Theme.NoTitleBar">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>

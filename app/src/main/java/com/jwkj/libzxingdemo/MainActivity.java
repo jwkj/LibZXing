@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
     public void onScanQR(View view) {
         QRCodeManager.getInstance()
                 .with(this)
-                .setReqeustType(0)
+                .setReqeustType(1)
 //                .setRequestCode(1001)
                 .scanningQRCode(new OnQRCodeListener() {
                     @Override
@@ -127,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        ELog.e("走了这里了"+requestCode+"---"+resultCode);
+        ELog.e("走了这里了" + requestCode + "---" + resultCode);
         //注册onActivityResult
         QRCodeManager.getInstance().with(this).onActivityResult(requestCode, resultCode, data);
     }
