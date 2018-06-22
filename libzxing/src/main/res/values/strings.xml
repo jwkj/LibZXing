@@ -8,4 +8,5 @@
     <string name="jwstr_pic_no_qrcode">图中无二维码或二维码难以识别</string>
     <string name="jwstr_camera_error">相机异常</string>
     <string name="jwstr_confirm">Confirm</string>
+    <string name="jwstr_scan_device">Please scan the QR code on the device body.</string>
 </resources>
