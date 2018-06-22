@@ -6,4 +6,5 @@
     <string name="jwstr_pic_no_qrcode">图中无二维码或二维码难以识别</string>
     <string name="jwstr_prompt">提示</string>
     <string name="jwstr_confirm">确定</string>
+    <string name="jwstr_scan_device">请扫描机身上的二维码</string>
 </resources>
