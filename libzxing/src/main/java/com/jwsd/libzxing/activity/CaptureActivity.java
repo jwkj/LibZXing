@@ -408,8 +408,14 @@ public class CaptureActivity extends Activity implements
                 Log.e("leleTest", "126");
                 //获取到ZXing相机管理器创建的camera
                 camera = cameraManager.getCamera();
+                if (camera == null) {
+                    return;
+                }
                 parameter = camera.getParameters();
-                // TODO 开灯
+                if (parameter == null) {
+                    return;
+                }
+                //开灯
                 if (isOpen) {
                     iv_light.setImageResource(R.drawable.light_off);
                     parameter.setFlashMode(Camera.Parameters.FLASH_MODE_OFF);
