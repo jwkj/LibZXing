@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources>
+    <string name="jwstr_confirm">تایید</string>
+    <string name="jwstr_prompt">نکته</string>
     <string name="jwstr_scan_it">اسکن</string>
     <string name="jwstr_scan_text">کد QR را در مربع وارد کنید، به طور خودکار اسکن می شود</string>
-    <string name="jwstr_prompt">نکته</string>
-    <string name="jwstr_confirm">تایید</string>
+    <string name="jwstr_prepare_device">گام 1 دستگاه را آماده کنید</string>
+    <string name="jwstr_scan_device_bottom_qrcode">لطفا کد کیو آر را روی پشت یا پایین دستگاه اسکن کنید</string>
 </resources>

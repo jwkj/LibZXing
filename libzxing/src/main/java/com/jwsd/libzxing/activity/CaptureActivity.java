@@ -148,7 +148,7 @@ public class CaptureActivity extends Activity implements
         } else {
             rl_mule.setVisibility(View.GONE);
             rl_device.setVisibility(View.VISIBLE);
-            tx_title.setText(getResources().getString(R.string.prepare_device));
+            tx_title.setText(getResources().getString(R.string.jwstr_prepare_device));
             capture_mask_bottom.setVisibility(View.GONE);
             rl_light.setVisibility(View.VISIBLE);
         }

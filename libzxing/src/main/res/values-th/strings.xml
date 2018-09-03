@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="no"?>
-<resources>
-    <string name="jwstr_scan_it">สแกนโค้ด</string>
-    <string name="jwstr_scan_text">สแกนรหัสสองมิติลงในกล่อง  มันจะสามารถสแกน</string>
-    <string name="jwstr_prompt">แนะแนว</string>
-    <string name="jwstr_confirm">แน่นอน</string>
-</resources>

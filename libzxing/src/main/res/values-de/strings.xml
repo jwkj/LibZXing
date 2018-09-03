@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources>
-    <string name="jwstr_scan_it">scannen</string>
-    <string name="jwstr_scan_text">Automatisch scannen wenn der QR-Code in der Mitte steht</string>
-    <string name="jwstr_prompt">Hinweis</string>
     <string name="jwstr_confirm">bestätigen</string>
+    <string name="jwstr_prompt">Hinweis</string>
+    <string name="jwstr_scan_it">scannen</string>
+    <string name="jwstr_scan_text">Automatisch scannen wenn der QR-Code in der Mitte ist</string>
+    <string name="jwstr_select_pic_from_album">Wählen Sie Bilder im Album aus</string>
+    <string name="jwstr_pic_no_qrcode">Kein 2D-Code oder 2D-Code ist schwer zu identifizieren</string>
+    <string name="jwstr_camera_error">Kamerafehler</string>
+    <string name="jwstr_prepare_device">Schritt 1 Gerät vorbereiten</string>
+    <string name="jwstr_scan_device_bottom_qrcode">Bitte scannen Sie QR Coden auf der Rückseite oder unter Gerät</string>
 </resources>
