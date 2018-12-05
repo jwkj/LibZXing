@@ -6,4 +6,5 @@
     <string name="jwstr_scan_text">Поместите QR-код в поле, чтобы начать автоматическое сканирование</string>
     <string name="jwstr_prepare_device">Шаг 1 Подготовьте устройство</string>
     <string name="jwstr_scan_device_bottom_qrcode">Пожалуйста, сканировать QR код на задней или нижней части устройства</string>
+    <string name="scan_qrcode_by_device_or_friends">Сканируйте QR-код на устройстве или</string>
 </resources>

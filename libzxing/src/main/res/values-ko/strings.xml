@@ -6,4 +6,5 @@
     <string name="jwstr_scan_text">바코드를 창내에 넣으면 즉시 자동 스캔 가능합니다</string>
     <string name="jwstr_prepare_device">첫번째 디바이스 준비</string>
     <string name="jwstr_scan_device_bottom_qrcode">디바이스의 뒷부분이나 밑부분에 있는 QR 코드를 스캔해 주세요.</string>
+    <string name="scan_qrcode_by_device_or_friends">기기 또는 공유에서 QR 코드를 스캔하십시오.</string>
 </resources>

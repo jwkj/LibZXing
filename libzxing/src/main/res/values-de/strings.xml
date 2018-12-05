@@ -9,4 +9,5 @@
     <string name="jwstr_camera_error">Kamerafehler</string>
     <string name="jwstr_prepare_device">Schritt 1 Gerät vorbereiten</string>
     <string name="jwstr_scan_device_bottom_qrcode">Bitte scannen Sie QR Coden auf der Rückseite oder unter Gerät</string>
+    <string name="scan_qrcode_by_device_or_friends">Bitte scannen Sie den QR-Code auf dem Gerät oder über das Teilen</string>
 </resources>

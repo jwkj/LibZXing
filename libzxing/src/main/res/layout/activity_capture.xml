@@ -130,7 +130,7 @@
             android:background="@color/backgound_color"
             android:gravity="center_horizontal"
             android:paddingTop="17.5dp"
-            android:text="@string/jwstr_scan_text"
+            android:text="@string/scan_qrcode_by_device_or_friends"
             android:textColor="#FFFFFF"
             android:textSize="12sp"
             android:paddingLeft="10dp"
