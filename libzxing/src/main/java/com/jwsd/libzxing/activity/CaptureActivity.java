@@ -276,6 +276,7 @@ public class CaptureActivity extends Activity implements
         }
         try {
             cameraManager.openDriver(surfaceHolder);
+            cameraManager.setCameraDisplayOrientation(this);
             // Creating the handler starts the preview, which can also throw a
             // RuntimeException.
             if (handler == null) {
@@ -485,6 +486,5 @@ public class CaptureActivity extends Activity implements
         int statusBarHeight = getResources().getDimensionPixelSize(resourceId);
         return statusBarHeight;
     }
-
 
 }
