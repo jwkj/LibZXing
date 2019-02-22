@@ -92,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
                 .with(this)
                 .setReqeustType(1)
 //                .setRequestCode(1001)
+                .setNumberScanTwice(true)
                 .scanningQRCode(new OnQRCodeListener() {
                     @Override
                     public void onCompleted(String result) {

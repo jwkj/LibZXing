@@ -38,6 +38,7 @@ public class QRCodeManager extends IQRCodeStrategy {
 
     private int textType = 0;
 
+    private boolean numberScanTwice = false;//扫描出数字重新扫描一次，第二次再扫描出数字就不再重新扫描
 
     private QRCodeManager() {
     }
@@ -61,6 +62,10 @@ public class QRCodeManager extends IQRCodeStrategy {
         return this;
     }
 
+    public QRCodeManager setNumberScanTwice(boolean numberScanTwice){
+        this.numberScanTwice = numberScanTwice;
+        return this;
+    }
     /**
      * 关联调用类
      *
@@ -130,6 +135,7 @@ public class QRCodeManager extends IQRCodeStrategy {
         Intent intent = new Intent(context, CaptureActivity.class);
         intent.putExtra("type", requestType);
         intent.putExtra("textType", textType);
+        intent.putExtra("numberScanTwice", numberScanTwice);
         context.startActivityForResult(intent, curRequestCode);
     }
 

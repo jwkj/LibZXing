@@ -103,6 +103,9 @@ public class CaptureActivity extends Activity implements
     private Camera.Parameters parameter;
     private boolean isOpen = false;
 
+    private boolean numberScanTwice = false;//扫描出数字重新扫描一次，第二次再扫描出数字就不再重新扫描
+
+    private int scanCounts = 1;//第几次扫描
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
@@ -114,7 +117,9 @@ public class CaptureActivity extends Activity implements
         setContentView(R.layout.activity_capture);
         captureType = getIntent().getIntExtra("type", 0);
         textType = getIntent().getIntExtra("textType", 0);
+        numberScanTwice = getIntent().getBooleanExtra("numberScanTwice", false);
         String string = getApplication().getResources().getString(R.string.jwstr_scan_it);
+        scanCounts = 1;
 //        Log.e("hdltag", "onCreate(CaptureActivity.java:102):" +string);
         scanPreview = (SurfaceView) findViewById(R.id.capture_preview);
         scanContainer = (RelativeLayout) findViewById(R.id.capture_container);
@@ -252,7 +257,15 @@ public class CaptureActivity extends Activity implements
             this.setResult(RESULT_OK, resultIntent);
             CaptureActivity.this.finish();
         } else {
-            scanDeviceSuccess(rawResult.toString(), bundle);
+            if (numberScanTwice
+                    && 1 == scanCounts
+                    && SelectAlbumUtils.isNumeric(rawResult.toString())) {
+                scanCounts++;
+                handler = new CaptureActivityHandler(this, cameraManager, DecodeThread.ALL_MODE);
+                inactivityTimer.onResume();
+            }else{
+                scanDeviceSuccess(rawResult.toString(), bundle);
+            }
         }
 
     }

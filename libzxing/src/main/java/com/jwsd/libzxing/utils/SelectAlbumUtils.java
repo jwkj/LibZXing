@@ -84,4 +84,11 @@ public class SelectAlbumUtils {
         }
         return Path;
     }
+
+    public static boolean isNumeric(String str) {
+        if (str != null && !"".equals(str.trim())) {
+            return str.matches("^[0-9]*$");
+        }
+        return false;
+    }
 }
