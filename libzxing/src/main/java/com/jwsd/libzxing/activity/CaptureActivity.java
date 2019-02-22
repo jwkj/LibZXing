@@ -106,6 +106,8 @@ public class CaptureActivity extends Activity implements
     private boolean numberScanTwice = false;//扫描出数字重新扫描一次，第二次再扫描出数字就不再重新扫描
 
     private int scanCounts = 1;//第几次扫描
+
+    private int supportDecodeType = DecodeThread.ALL_MODE;//支持扫描二维码的类型
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
@@ -118,6 +120,7 @@ public class CaptureActivity extends Activity implements
         captureType = getIntent().getIntExtra("type", 0);
         textType = getIntent().getIntExtra("textType", 0);
         numberScanTwice = getIntent().getBooleanExtra("numberScanTwice", false);
+        supportDecodeType = getIntent().getIntExtra("supportDecodeType", DecodeThread.ALL_MODE);
         String string = getApplication().getResources().getString(R.string.jwstr_scan_it);
         scanCounts = 1;
 //        Log.e("hdltag", "onCreate(CaptureActivity.java:102):" +string);
@@ -261,7 +264,7 @@ public class CaptureActivity extends Activity implements
                     && 1 == scanCounts
                     && SelectAlbumUtils.isNumeric(rawResult.toString())) {
                 scanCounts++;
-                handler = new CaptureActivityHandler(this, cameraManager, DecodeThread.ALL_MODE);
+                handler = new CaptureActivityHandler(this, cameraManager, supportDecodeType);
                 inactivityTimer.onResume();
             }else{
                 scanDeviceSuccess(rawResult.toString(), bundle);
@@ -299,7 +302,7 @@ public class CaptureActivity extends Activity implements
             // Creating the handler starts the preview, which can also throw a
             // RuntimeException.
             if (handler == null) {
-                handler = new CaptureActivityHandler(this, cameraManager, DecodeThread.ALL_MODE);
+                handler = new CaptureActivityHandler(this, cameraManager, supportDecodeType);
             }
 
             initCrop();

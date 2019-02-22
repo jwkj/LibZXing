@@ -9,6 +9,7 @@ import android.media.MediaPlayer;
 import android.text.TextUtils;
 
 import com.jwsd.libzxing.activity.CaptureActivity;
+import com.jwsd.libzxing.decode.DecodeThread;
 import com.jwsd.libzxing.encoding.EncodingUtils;
 
 import java.io.IOException;
@@ -40,6 +41,19 @@ public class QRCodeManager extends IQRCodeStrategy {
 
     private boolean numberScanTwice = false;//扫描出数字重新扫描一次，第二次再扫描出数字就不再重新扫描
 
+    private int supportDecodeType = DecodeThread.ALL_MODE;//支持扫描二维码的类型
+
+    public enum SupportDecodeType{
+        SUPPORT_BARCODE(0X100),//支持条形码
+        SUPPORT_QRCODE(0X200),//支持二维码
+        SUPPORT_ALL(0X300);//条形码和二维码都支持
+        int value;
+
+        SupportDecodeType(int type) {
+            this.value = type;
+        }
+    }
+
     private QRCodeManager() {
     }
 
@@ -62,10 +76,24 @@ public class QRCodeManager extends IQRCodeStrategy {
         return this;
     }
 
+    /** 设置扫描结果为数字时需不需重新扫描
+     * @param numberScanTwice
+     * @return
+     */
     public QRCodeManager setNumberScanTwice(boolean numberScanTwice){
         this.numberScanTwice = numberScanTwice;
         return this;
     }
+
+    /** 设置支持扫描的图片类型
+     * @param supportDecodeType：
+     * @return
+     */
+    public QRCodeManager setSupportDecodeType(SupportDecodeType supportDecodeType){
+        this.supportDecodeType = supportDecodeType.value;
+        return this;
+    }
+
     /**
      * 关联调用类
      *
@@ -136,6 +164,7 @@ public class QRCodeManager extends IQRCodeStrategy {
         intent.putExtra("type", requestType);
         intent.putExtra("textType", textType);
         intent.putExtra("numberScanTwice", numberScanTwice);
+        intent.putExtra("supportDecodeType", supportDecodeType);
         context.startActivityForResult(intent, curRequestCode);
     }
 
