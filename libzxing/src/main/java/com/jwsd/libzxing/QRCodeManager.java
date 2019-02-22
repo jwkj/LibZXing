@@ -2,11 +2,16 @@ package com.jwsd.libzxing;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.AssetFileDescriptor;
+import android.content.res.AssetManager;
 import android.graphics.Bitmap;
+import android.media.MediaPlayer;
 import android.text.TextUtils;
 
 import com.jwsd.libzxing.activity.CaptureActivity;
 import com.jwsd.libzxing.encoding.EncodingUtils;
+
+import java.io.IOException;
 
 
 /**
@@ -27,7 +32,7 @@ public class QRCodeManager extends IQRCodeStrategy {
      */
     private int curRequestCode = SCAN_REQUEST_CODE;
     /**
-     * 请求的类型，默认为0
+     * 请求的类型，默认为0（0：传感器添加 1：扫一扫 2：扫描自动配网）
      */
     private int requestType = 0;
 
@@ -145,6 +150,19 @@ public class QRCodeManager extends IQRCodeStrategy {
             if (TextUtils.isEmpty(result)) {
                 callback.onError(new Throwable("result is null"));
             } else {
+                //扫描成功发出提示音di
+                AssetManager am = context.getAssets();// 获得该应用的AssetManager
+                AssetFileDescriptor afd = null;
+                try {
+                    MediaPlayer player = new MediaPlayer();
+                    afd = am.openFd("di.mp3");
+                    player.setDataSource(afd.getFileDescriptor(),
+                            afd.getStartOffset(), afd.getLength());
+                    player.prepare(); // 准备
+                    player.start();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
                 callback.onCompleted(result);
             }
         } else if (requestCode == curRequestCode && resultCode == Activity.RESULT_CANCELED) {//取消

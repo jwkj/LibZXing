@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources>
+    <string name="jwstr_confirm">Conferma</string>
+    <string name="jwstr_prompt">Suggerimento</string>
     <string name="jwstr_scan_it">Scansione QRcode</string>
     <string name="jwstr_scan_text">Allinea il codice QR all’interno del riguadro per avviare la scansione</string>
-    <string name="jwstr_prompt">Suggerimento</string>
-    <string name="jwstr_confirm">Conferma</string>
+    <string name="jwstr_prepare_device">Step 1 la preparazione del dispositivo</string>
+    <string name="jwstr_scan_device_bottom_qrcode">Si prega di scansionare il codice QR sul retro o sul fondo del dispositivo</string>
+    <string name="scan_qrcode_by_device_or_friends">Si prega di scansionare il codice QR sul dispositivo o dalla condivisione</string>
 </resources>

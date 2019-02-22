@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources>
+    <string name="jwstr_confirm">確定</string>
+    <string name="jwstr_prompt">提示</string>
     <string name="jwstr_scan_it">掃壹掃</string>
     <string name="jwstr_scan_text">將二維碼放入框內,即可自動掃描</string>
-    <string name="jwstr_prompt">提示</string>
-    <string name="jwstr_confirm">確定</string>
+    <string name="jwstr_select_pic_from_album">選擇相冊中的圖片</string>
+    <string name="jwstr_pic_no_qrcode">圖中無二維碼或二維碼難以識別</string>
+    <string name="jwstr_camera_error">相機異常</string>
+    <string name="jwstr_prepare_device">第壹步 準備設備</string>
+    <string name="jwstr_scan_device_bottom_qrcode">請掃描設備背部或底部的二維碼</string>
+    <string name="scan_qrcode_by_device_or_friends">請掃描設備上的或親友分享的二維碼</string>
 </resources>

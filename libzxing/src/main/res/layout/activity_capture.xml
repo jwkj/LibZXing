@@ -17,68 +17,124 @@
         <RelativeLayout
             android:id="@+id/rl_title"
             android:layout_width="match_parent"
-            android:layout_height="142dp"
-            android:background="@drawable/shadow">
+            android:layout_height="54dp"
+            android:background="@color/backgound_color">
 
             <ImageView
                 android:id="@+id/iv_back"
                 android:layout_width="wrap_content"
-                android:layout_height="40.5dp"
-                android:paddingLeft="15dp"
-                android:paddingRight="16.5dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
                 android:src="@drawable/bg_button_ivback_qr" />
 
             <TextView
+                android:id="@+id/tx_title"
                 android:layout_width="wrap_content"
-                android:layout_height="40.5dp"
-                android:gravity="center"
-                android:layout_centerHorizontal="true"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
                 android:text="@string/jwstr_scan_it"
                 android:textColor="#FFFFFF" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_mule"
+            android:layout_width="match_parent"
+            android:layout_height="88dp"
+            android:layout_below="@+id/rl_title"
+            android:background="@color/backgound_color">
 
             <ImageView
                 android:id="@+id/iv_mudle"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="88dp"
                 android:layout_alignParentRight="true"
-                android:layout_below="@+id/iv_back"
                 android:layout_marginRight="44dp"
-                android:layout_marginTop="5dp"
                 android:src="@drawable/bg_button_mullt" />
+        </RelativeLayout>
 
+        <RelativeLayout
+            android:id="@+id/rl_device"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_mule"
+            android:background="@color/backgound_color"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/iv_device"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="42dp"
+                android:src="@drawable/scan_device" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_device"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="12dp"
+                android:layout_marginTop="12dp"
+                android:text="@string/jwstr_scan_device_bottom_qrcode"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:gravity="center_horizontal"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"/>
         </RelativeLayout>
 
 
         <RelativeLayout
             android:id="@+id/capture_crop_view"
-            android:layout_width="270.5dp"
-            android:layout_height="279dp"
-            android:layout_below="@+id/rl_title"
+            android:layout_width="260dp"
+            android:layout_height="260dp"
+            android:layout_below="@+id/rl_device"
             android:layout_centerHorizontal="true"
-            android:background="@drawable/qr_code_bg">
+            android:background="@drawable/scan_qr_background">
 
             <ImageView
                 android:id="@+id/capture_scan_line"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:layout_marginBottom="5dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/scan" />
+                android:background="@drawable/scan_qr" />
 
         </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_light"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/capture_crop_view"
+            android:background="@color/backgound_color"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/iv_light"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:scaleType="center"
+                android:src="@drawable/light_off" />
+        </RelativeLayout>
+
 
         <TextView
             android:id="@+id/capture_mask_bottom"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/capture_crop_view"
+            android:background="@color/backgound_color"
             android:gravity="center_horizontal"
             android:paddingTop="17.5dp"
-            android:background="@drawable/shadow"
-            android:text="@string/jwstr_scan_text"
+            android:text="@string/scan_qrcode_by_device_or_friends"
             android:textColor="#FFFFFF"
-            android:textSize="12sp" />
+            android:textSize="12sp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"/>
 
         <TextView
             android:id="@+id/tv_capture_select_album_jwsd"
@@ -86,32 +142,32 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignTop="@id/capture_mask_bottom"
-            android:background="@drawable/shadow"
+            android:background="@color/backgound_color"
             android:gravity="center"
-            android:visibility="gone"
             android:text="@string/jwstr_select_pic_from_album"
             android:textColor="#1dcaf5"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:visibility="gone" />
 
         <ImageView
             android:id="@+id/capture_mask_left"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="260dp"
             android:layout_above="@id/capture_mask_bottom"
             android:layout_alignParentLeft="true"
-            android:layout_below="@id/rl_title"
+            android:layout_below="@id/rl_device"
             android:layout_toLeftOf="@id/capture_crop_view"
-            android:background="@drawable/shadow" />
+            android:background="@color/backgound_color" />
 
         <ImageView
             android:id="@+id/capture_mask_right"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="260dp"
             android:layout_above="@id/capture_mask_bottom"
             android:layout_alignParentRight="true"
-            android:layout_below="@id/rl_title"
+            android:layout_below="@id/rl_device"
             android:layout_toRightOf="@id/capture_crop_view"
-            android:background="@drawable/shadow" />
+            android:background="@color/backgound_color" />
     </RelativeLayout>
 
 </RelativeLayout>

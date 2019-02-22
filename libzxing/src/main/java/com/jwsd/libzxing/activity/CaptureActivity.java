@@ -19,18 +19,23 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Rect;
+import android.hardware.Camera;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -91,13 +96,21 @@ public class CaptureActivity extends Activity implements
     }
 
     private DialogInterface.OnClickListener mOnClickListener;
+    private ImageView iv_light;
+    private RelativeLayout rl_device, rl_mule, rl_light;
+    private TextView tx_title, capture_mask_bottom;
+    private Camera camera;
+    private Camera.Parameters parameter;
+    private boolean isOpen = false;
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+//        setStatusColor(this,R.color.backgound_color);
         Window window = getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+//        window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         setContentView(R.layout.activity_capture);
         captureType = getIntent().getIntExtra("type", 0);
         textType = getIntent().getIntExtra("textType", 0);
@@ -110,6 +123,11 @@ public class CaptureActivity extends Activity implements
         ivBack = (ImageView) findViewById(R.id.iv_back);
         ivMullt = (ImageView) findViewById(R.id.iv_mudle);
         tvAlbum = (TextView) findViewById(R.id.tv_capture_select_album_jwsd);
+        iv_light = (ImageView) findViewById(R.id.iv_light);
+        tx_title = (TextView) findViewById(R.id.tx_title);
+        rl_device = (RelativeLayout) findViewById(R.id.rl_device);
+        rl_mule = (RelativeLayout) findViewById(R.id.rl_mule);
+        rl_light = (RelativeLayout) findViewById(R.id.rl_light);
         capture_mask_bottom = (TextView) findViewById(R.id.capture_mask_bottom);
         if (textType != 0){
             capture_mask_bottom.setText(getString(R.string.jwstr_scan_device));
@@ -117,21 +135,35 @@ public class CaptureActivity extends Activity implements
         ivBack.setTag(123);
         ivMullt.setTag(124);
         tvAlbum.setTag(125);
+        iv_light.setTag(126);
         tvAlbum.setOnClickListener(this);
         ivBack.setOnClickListener(this);
         ivMullt.setOnClickListener(this);
+        iv_light.setOnClickListener(this);
         inactivityTimer = new InactivityTimer(this);
         beepManager = new BeepManager(this);
 
-        if (captureType == 1) {
+        if (captureType == 0) {
+            rl_mule.setVisibility(View.VISIBLE);
+            rl_device.setVisibility(View.GONE);
+            ivMullt.setVisibility(View.VISIBLE);
+        } else if (captureType == 1) {
+            rl_mule.setVisibility(View.VISIBLE);
+            rl_device.setVisibility(View.GONE);
             ivMullt.setVisibility(View.INVISIBLE);
+        } else {
+            rl_mule.setVisibility(View.GONE);
+            rl_device.setVisibility(View.VISIBLE);
+            tx_title.setText(getResources().getString(R.string.jwstr_prepare_device));
+            capture_mask_bottom.setVisibility(View.GONE);
+            rl_light.setVisibility(View.VISIBLE);
         }
 
         TranslateAnimation animation = new TranslateAnimation(
                 Animation.RELATIVE_TO_PARENT, 0.0f,
                 Animation.RELATIVE_TO_PARENT, 0.0f,
-                Animation.RELATIVE_TO_PARENT, 0.0f,
-                Animation.RELATIVE_TO_PARENT, 0.9f);
+                Animation.RELATIVE_TO_PARENT, -0.44f,
+                Animation.RELATIVE_TO_PARENT, 0.56f);
         animation.setDuration(4500);
         animation.setRepeatCount(-1);
         animation.setRepeatMode(Animation.RESTART);
@@ -250,6 +282,7 @@ public class CaptureActivity extends Activity implements
         }
         try {
             cameraManager.openDriver(surfaceHolder);
+            cameraManager.setCameraDisplayOrientation(this);
             // Creating the handler starts the preview, which can also throw a
             // RuntimeException.
             if (handler == null) {
@@ -378,7 +411,34 @@ public class CaptureActivity extends Activity implements
                 intent.setType("image/*");
                 startActivityForResult(intent, CODE_GALLERY_REQUEST);
                 break;
+            case 126:
+                Log.e("leleTest", "126");
+                //获取到ZXing相机管理器创建的camera
+                camera = cameraManager.getCamera();
+                if (camera == null) {
+                    return;
+                }
+                parameter = camera.getParameters();
+                if (parameter == null) {
+                    return;
+                }
+                //开灯
+                if (isOpen) {
+                    iv_light.setImageResource(R.drawable.light_off);
+                    parameter.setFlashMode(Camera.Parameters.FLASH_MODE_OFF);
+                    camera.setParameters(parameter);
+                    isOpen = false;
+                } else {  // 关灯
+                    iv_light.setImageResource(R.drawable.light_on);
+                    parameter.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
+                    camera.setParameters(parameter);
+                    isOpen = true;
+                }
+                break;
+            default:
+                break;
         }
+
     }
 
     @Override
@@ -396,5 +456,41 @@ public class CaptureActivity extends Activity implements
         }
     }
 
+    //设备状态栏和标题栏一样的颜色
+    public void setStatusColor(Activity activity, int resource) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Window window = activity.getWindow();
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(Color.TRANSPARENT);
+            View statusView = createStatusView(activity, resource);
+            // 添加 statusView 到布局中
+            ViewGroup decorView = (ViewGroup) activity.getWindow().getDecorView();
+            decorView.addView(statusView);
+        }
+    }
+
+    //生成一个和状态栏大小相同的矩形条
+    public View createStatusView(Activity activity, int resource) {
+        // 获得状态栏高度
+        int statusBarHeight = getStatusHeigh();
+        // 绘制一个和状态栏一样高的矩形
+        View statusView = new View(activity);
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, statusBarHeight);
+        statusView.setLayoutParams(params);
+        statusView.setBackgroundResource(resource);
+        return statusView;
+    }
+
+    /**
+     * 获取状态栏高度
+     *
+     * @return 状态栏高度
+     */
+    public int getStatusHeigh() {
+        int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
+        int statusBarHeight = getResources().getDimensionPixelSize(resourceId);
+        return statusBarHeight;
+    }
 
 }

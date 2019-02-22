@@ -19,17 +19,12 @@ package com.jwsd.libzxing.utils;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.content.res.AssetFileDescriptor;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Vibrator;
 import android.preference.PreferenceManager;
-import android.util.Log;
-
-import com.jwsd.libzxing.R;
 
 import java.io.Closeable;
-import java.io.IOException;
 
 public class BeepManager implements MediaPlayer.OnCompletionListener, MediaPlayer.OnErrorListener, Closeable {
 
@@ -76,7 +71,7 @@ public class BeepManager implements MediaPlayer.OnCompletionListener, MediaPlaye
 
     public synchronized void playBeepSoundAndVibrate() {
         if (playBeep && mediaPlayer != null) {
-            mediaPlayer.start();
+//            mediaPlayer.start();
         }
         if (vibrate) {
             Vibrator vibrator = (Vibrator) activity.getSystemService(Context.VIBRATOR_SERVICE);
@@ -85,25 +80,26 @@ public class BeepManager implements MediaPlayer.OnCompletionListener, MediaPlaye
     }
 
     private MediaPlayer buildMediaPlayer(Context activity) {
-        MediaPlayer mediaPlayer = new MediaPlayer();
-        mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
-        mediaPlayer.setOnCompletionListener(this);
-        mediaPlayer.setOnErrorListener(this);
-        try {
-            AssetFileDescriptor file = activity.getResources().openRawResourceFd(R.raw.beep);
-            try {
-                mediaPlayer.setDataSource(file.getFileDescriptor(), file.getStartOffset(), file.getLength());
-            } finally {
-                file.close();
-            }
-            mediaPlayer.setVolume(BEEP_VOLUME, BEEP_VOLUME);
-            mediaPlayer.prepare();
-            return mediaPlayer;
-        } catch (IOException ioe) {
-            Log.w(TAG, ioe);
-            mediaPlayer.release();
-            return null;
-        }
+//        MediaPlayer mediaPlayer = new MediaPlayer();
+//        mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+//        mediaPlayer.setOnCompletionListener(this);
+//        mediaPlayer.setOnErrorListener(this);
+//        try {
+//            AssetFileDescriptor file = activity.getResources().openRawResourceFd(R.raw.beep);
+//            try {
+//                mediaPlayer.setDataSource(file.getFileDescriptor(), file.getStartOffset(), file.getLength());
+//            } finally {
+//                file.close();
+//            }
+//            mediaPlayer.setVolume(BEEP_VOLUME, BEEP_VOLUME);
+//            mediaPlayer.prepare();
+//            return mediaPlayer;
+//        } catch (IOException ioe) {
+//            Log.w(TAG, ioe);
+//            mediaPlayer.release();
+//            return null;
+//        }
+        return null;
     }
 
     @Override

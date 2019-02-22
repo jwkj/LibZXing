@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources>
+    <string name="jwstr_confirm">Xác nhận</string>
+    <string name="jwstr_prompt">Nhắc nhở</string>
     <string name="jwstr_scan_it">Quét</string>
     <string name="jwstr_scan_text">Đặt QR vào trong khung nó sẽ tự động quét</string>
-    <string name="jwstr_prompt">Nhắc nhở</string>
+    <string name="jwstr_prepare_device">Bước 1 Chuẩn bị thiết bị</string>
+    <string name="jwstr_scan_device_bottom_qrcode">Vui lòng quét mã QR ở mặt sau hoặc đáy của thiết bị</string>
+    <string name="scan_qrcode_by_device_or_friends">Vui lòng quét mã QR trên thiết bị hoặc từ việc chia sẻ</string>
 </resources>

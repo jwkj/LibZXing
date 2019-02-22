@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<resources>
+    <string name="jwstr_confirm">Potvrdit</string>
+    <string name="jwstr_prompt">Výzva</string>
+    <string name="jwstr_scan_it">Naskenujte</string>
+    <string name="jwstr_scan_text">Umístěte QR kód do pole pro spuštění automatického skenování </string>
+    <string name="jwstr_select_pic_from_album">Zvolit obrázek z alba</string>
+    <string name="jwstr_pic_no_qrcode">Na obrázku nebyl nalezen žádný QR kód nebo jej nelze rozpoznat</string>
+    <string name="jwstr_camera_error">netypický fotoaparát</string>
+    <string name="jwstr_prepare_device">Krok 1: příprava</string>
+    <string name="jwstr_scan_device_bottom_qrcode">Naskenujte QR kód na zadní či spodní straně zařízení</string>
+    <string name="scan_qrcode_by_device_or_friends">Zkontrolujte prosím kód QR v zařízení nebo ze sdílení</string>
+</resources>
