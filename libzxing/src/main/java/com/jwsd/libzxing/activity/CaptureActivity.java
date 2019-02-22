@@ -77,11 +77,13 @@ public class CaptureActivity extends Activity implements
     private RelativeLayout scanContainer;
     private RelativeLayout scanCropView;
     private ImageView scanLine;
+    private TextView capture_mask_bottom;
 
     private Rect mCropRect = null;
     private boolean isHasSurface = false;
     private ImageView ivBack, ivMullt;
     private int captureType = 0;
+    private int textType = 0;
     private TextView tvAlbum;
     private static final int CODE_GALLERY_REQUEST = 101;
 
@@ -111,6 +113,7 @@ public class CaptureActivity extends Activity implements
 //        window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         setContentView(R.layout.activity_capture);
         captureType = getIntent().getIntExtra("type", 0);
+        textType = getIntent().getIntExtra("textType", 0);
         String string = getApplication().getResources().getString(R.string.jwstr_scan_it);
 //        Log.e("hdltag", "onCreate(CaptureActivity.java:102):" +string);
         scanPreview = (SurfaceView) findViewById(R.id.capture_preview);
@@ -126,6 +129,9 @@ public class CaptureActivity extends Activity implements
         rl_mule = (RelativeLayout) findViewById(R.id.rl_mule);
         rl_light = (RelativeLayout) findViewById(R.id.rl_light);
         capture_mask_bottom = (TextView) findViewById(R.id.capture_mask_bottom);
+        if (textType != 0){
+            capture_mask_bottom.setText(getString(R.string.jwstr_scan_device));
+        }
         ivBack.setTag(123);
         ivMullt.setTag(124);
         tvAlbum.setTag(125);

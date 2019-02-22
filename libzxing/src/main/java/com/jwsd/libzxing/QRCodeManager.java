@@ -36,6 +36,9 @@ public class QRCodeManager extends IQRCodeStrategy {
      */
     private int requestType = 0;
 
+    private int textType = 0;
+
+
     private QRCodeManager() {
     }
 
@@ -81,6 +84,17 @@ public class QRCodeManager extends IQRCodeStrategy {
     }
 
     /**
+     * 设置文本类型
+     *
+     * @param textType
+     * @return
+     */
+    public QRCodeManager setTextType(int textType) {
+        this.textType = textType;
+        return this;
+    }
+
+    /**
      * <p>扫描二维码.</p>
      * 带回调的，一般表示结果由本管理器来处理onActivityResult方法，结果通过callback拿到。
      * <br/>
@@ -115,6 +129,7 @@ public class QRCodeManager extends IQRCodeStrategy {
         this.curRequestCode = requestCode;
         Intent intent = new Intent(context, CaptureActivity.class);
         intent.putExtra("type", requestType);
+        intent.putExtra("textType", textType);
         context.startActivityForResult(intent, curRequestCode);
     }
 
