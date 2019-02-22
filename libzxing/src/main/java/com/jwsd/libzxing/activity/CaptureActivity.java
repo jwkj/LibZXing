@@ -98,7 +98,7 @@ public class CaptureActivity extends Activity implements
     private DialogInterface.OnClickListener mOnClickListener;
     private ImageView iv_light;
     private RelativeLayout rl_device, rl_mule, rl_light;
-    private TextView tx_title, capture_mask_bottom;
+    private TextView tx_title;
     private Camera camera;
     private Camera.Parameters parameter;
     private boolean isOpen = false;
